@@ -1,10 +1,10 @@
-package id.ac.ui.cs.advprog.eurekaservice;
+package id.ac.ui.cs.advprog.authgateway;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class EurekaServiceApplicationTests {
+class AuthGatewayApplicationTests {
 
     @Test
     void contextLoads() {
