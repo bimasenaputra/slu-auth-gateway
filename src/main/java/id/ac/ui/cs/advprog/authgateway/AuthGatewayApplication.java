@@ -5,14 +5,12 @@ import com.google.firebase.FirebaseApp;
 import com.google.firebase.FirebaseOptions;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.gateway.route.RouteLocator;
-import org.springframework.cloud.gateway.route.builder.RouteLocatorBuilder;
-import org.springframework.context.annotation.Bean;
 import java.io.IOException;
 import java.io.InputStream;
 
 @SpringBootApplication
 public class AuthGatewayApplication {
+
     public static FirebaseApp defaultApp;
 
     public static void main(String[] args) throws IOException {
@@ -32,15 +30,5 @@ public class AuthGatewayApplication {
         }
 
         SpringApplication.run(AuthGatewayApplication.class, args);
-    }
-
-    @Bean
-    RouteLocator gateway (RouteLocatorBuilder rlb) {
-        return rlb
-                .routes()
-                .route(routeSpec -> routeSpec
-                        .path("/api/account/**")
-                        .uri("http://localhost:8082"))
-                .build();
     }
 }
