@@ -30,9 +30,9 @@ public abstract class RequireAuthenticationFilter<T extends RequireAuthenticatio
                 FirebaseToken token = authenticate(request);
                 return chain.filter(mutate(exchange, token));
             } catch (FirebaseAuthException | IllegalArgumentException e) {
-                return onError(exchange, e.getMessage(), HttpStatus.FORBIDDEN);
+                return onError(exchange, "Your session has expired. Please login again.", HttpStatus.FORBIDDEN);
             } catch (Exception e) {
-                return onError(exchange, e.getMessage(), HttpStatus.BAD_REQUEST);
+                return onError(exchange, "Wrong request payload.", HttpStatus.BAD_REQUEST);
             }
         };
     }
@@ -41,6 +41,7 @@ public abstract class RequireAuthenticationFilter<T extends RequireAuthenticatio
 
     private FirebaseToken authenticate(ServerHttpRequest request) throws FirebaseAuthException, IllegalArgumentException {
         var cookies = request.getHeaders().getFirst(HttpHeaders.COOKIE);
+        if (cookies == null) throw new IllegalArgumentException();
         var idToken = extract(cookies).get("idToken");
         return FirebaseAuth.getInstance().verifyIdToken(idToken);
     }
