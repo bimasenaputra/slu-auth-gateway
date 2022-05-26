@@ -3,6 +3,9 @@
 Scheduler with Logistic Utility merupakan sebuah website yang menyediakan layanan untuk membuat schedule dengan kemampuan routing antar tempat
 yang dapat memperhitungkan penggunaan waktu yang dibutuhkan pada aktivitas tersebut.
 
+## Link Aplikasi
+https://b13-adpro-project.herokuapp.com 
+
 ## Status Branch Main
 
 [![coverage report](https://gitlab.cs.ui.ac.id/AdvProg/reguler-2022/student/kelas-b/2006530356-Bimasena-Putra/group-b13-project/auth-gateway/badges/main/coverage.svg)](https://gitlab.cs.ui.ac.id/AdvProg/reguler-2022/student/kelas-b/2006530356-Bimasena-Putra/group-b13-project/auth-gateway/-/commits/main)
@@ -34,5 +37,5 @@ yang dapat memperhitungkan penggunaan waktu yang dibutuhkan pada aktivitas terse
 ### Upcoming Features (Sprint 3)
 1. Time Calculator
    - User dapat melihat total waktu perjalanan setelah mengisi form time calculator.
-2. Traveling Method
+2. Departure Recommendation
    - User dapat mengetahui rekomendasi waktu keberangkatan dan lamanya waktu aktivitas berdasarkan traveling method yang dipilih.
