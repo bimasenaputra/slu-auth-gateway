@@ -22,7 +22,7 @@ public class AuthGatewayApplication {
         assert file != null;
         FirebaseOptions options = new FirebaseOptions.Builder()
                 .setCredentials(GoogleCredentials.fromStream(file))
-                .setDatabaseUrl("https://b13-project-f85c4-default-rtdb.firebaseio.com/")
+                .setDatabaseUrl(System.getenv("FIREBASE_DB_URL"))
                 .build();
 
         if (FirebaseApp.getApps().isEmpty()) {
